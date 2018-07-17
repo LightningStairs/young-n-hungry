@@ -4,14 +4,14 @@ import './SearchBar.css';
 const sortByOptions = {
   'Best Match': 'best_match',
   'Highest Rated': 'rating',
-  'Most Reviewed' 'review-count':
+  'Most Reviewed': 'review-count'
 }
 
 class SearchBar extends React.Component {
   renderSortByOptions() {
-    return Object.keys(sortByOptions).map((option) => {
+    return Object.keys(sortByOptions).map((option, i) => {
       let sortByOptionsValue = sortByOptions[option];
-      return <li key=?>{option}</li>
+      return <li key={i}>{option}</li>
     })
   }
 
@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
       <div className="SearchBar">
         <div className="SearchBar-sort-options">
           <ul>
-            {renderSortByOptions()}
+            {this.renderSortByOptions()}
           </ul>
         </div>
         <div className="SearchBar-fields">
